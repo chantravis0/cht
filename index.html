@@ -22,6 +22,14 @@ function load()
     {
         obj_param=null
     }
+    if(obj_param==null)
+    {
+        resultmesg='obj_param to json failure!';
+    }else
+    {
+        resultmesg='obj_param to json successful!';
+    }
+    document.getElementById('resultMesg').innerText=resultmesg;
     show();
 }
 function show()
@@ -30,13 +38,13 @@ function show()
     resultshow+='<tr><th>key</th><th>value</th></tr>';
     resultshow+='<tr><td>'+obj_key+'</td><td>'+obj_value+'</td></tr>';
     resultshow+='</table>';
-    document.getElementById('resultShow').innerText=resultshow;
+    document.getElementById('resultShow').innerHTML=resultshow;
 }
     </script>
 </head>
 <body onload="load()">
     <h1>Welcom to CHT！</h1>
-    <p>测试</p>
+    <div id="resultMesg" />
     <div id="resultShow"></div>
 </body>
 </html>
