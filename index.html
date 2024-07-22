@@ -7,17 +7,27 @@
     <script type="text/javascript" src="../cht/js/xlsx.full.min.js"></script>
     <script type="text/javascript" src="../cht/js/tool.js"></script>
     <script type="text/javascript">
+var obj_key='';
+var obj_value='';
+var obj_param={};
 var resultshow='';
 function load()
 {
-    var obj=getQueryParameter(window.location.href);
-    show(obj);
+    obj_key=getQueryParameter('key',window.location.href);
+    obj_value=getQueryParameter('value',window.location.href);
+    try{
+        obj_param=JSON.parse(obj_value);
+    }catch(e)
+    {
+        obj_param=null
+    }
+    show();
 }
-function show(obj)
+function show()
 {
     resultshow='<table border="2" style="width:100%">';
     resultshow+='<tr><th>key</th><th>value</th></tr>';
-    resultshow+='<tr><td>'+obj['name']['key']+'</td><td>'+obj['name']['value']+'</td></tr>';
+    resultshow+='<tr><td>'+obj_key+'</td><td>'+obj_value+'</td></tr>';
     resultshow+='</table>';
     document.getElementById('resultShow').innerText=resultshow;
 }
