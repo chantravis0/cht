@@ -1,0 +1,81 @@
+function Table2Xlsx()
+{
+	//?取表格元素
+	var table = document.getElementById("resultTable");
+	// ?建一?新的Workbook
+	var workbook = XLSX.utils.book_new();
+	// ?表格?据???Worksheet
+	var worksheet = XLSX.utils.table_to_sheet(table);
+	// ?Worksheet添加到Workbook
+	XLSX.utils.book_append_sheet(workbook, worksheet, 'Hadoop');
+	// ?Workbook???XLS文件的二?制?据
+	var xlsData = XLSX.write(workbook, { bookType: "xlsx", type: "array" });
+	// ?建一?Blob?象
+	var blob = new Blob([xlsData], { type: "application/octet-stream" });//vnd.ms-excel
+	// ?建一?下??接
+	var downloadLink = document.createElement("a");
+	downloadLink.href = URL.createObjectURL(blob);
+	downloadLink.download = "table.xlsx";
+	// 模???下??接
+	downloadLink.click();
+}
+
+function Json2Xlsx(obj)
+{
+	if(obj['column'].length==0)
+	{
+		return;
+	}
+	
+	obj['rowData']=[];
+	
+	for(i in obj['rowDataStr'])
+	{
+		objsub = JSON.parse(obj['rowDataStr'][i]);
+		obj['rowData'].push(objsub);
+	}
+	
+	//?取表格元素
+	// ?建一?新的Workbook
+	var workbook = XLSX.utils.book_new();
+	// ?表格?据???Worksheet
+	var worksheet = XLSX.utils.json_to_sheet(obj['rowData']);
+	
+	// ?取表??量 
+	const headersCount = obj['column'].length;
+
+	// 生成表格范?列?
+	const lastCol = String.fromCharCode(65 + headersCount - 1); 
+
+	// ?置范?
+	//worksheet['!ref'] = 'A1:'+lastCol+'1';
+
+	// 循??置表?
+	obj['column'].forEach((h, i) => {
+		worksheet[GetXlsHeader(i) + '1'].v = h; 
+	});
+	
+	// ?Worksheet添加到Workbook
+	XLSX.utils.book_append_sheet(workbook, worksheet, "Hadoop");
+	
+	var cbautodownload = document.getElementById("cbautodownload");
+	if(cbautodownload.checked==true)
+	{
+		// ?出 Excel
+		XLSX.writeFile(workbook,'json.xlsx');
+	}
+	
+}
+
+function GetXlsHeader(obj)
+{
+	var quotient = Math.floor(obj/26);
+	var remainder =obj%26;
+	var str='';
+	if(quotient>0)
+	{
+		str+=String.fromCharCode(64 + quotient);
+	}
+	str+=String.fromCharCode(65 + remainder);
+	return str;
+}
