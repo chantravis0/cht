@@ -4,9 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CHT</title>
+    <script type="text/javascript" src="../js/xlsx.full.min.js"></script>
+    <script type="text/javascript" src="../js/tool.js"></script>
+    <script type="text/javascript">
+var resultshow='';
+function load()
+{
+    var obj=getQueryParameter(window.location.href);
+    show(obj);
+}
+function show(obj)
+{
+    resultshow='<table border="2" style="width:100%">';
+    resultshow+='<tr><th>key</th><th>value</th></tr>';
+    resultshow+='<tr><td>'+obj['name']['key']+'</td><td>'+obj['name']['value']+'</td></tr>';
+    resultshow+='</table>';
+    document.getElementById('resultShow').innerText=resultshow;
+}
+    </script>
 </head>
-<body>
+<body onload="load()">
     <h1>Welcom to CHT！</h1>
     <p>测试</p>
+    <div id="resultShow></div>
 </body>
 </html>
