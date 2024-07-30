@@ -13,3 +13,8 @@ function getQueryParameter(name,url)
 	}
 	return decodeURIComponent(results[2].replace(/\+/g,' '));
 }
+
+function base64ToDecode(data)
+{
+	return unescape(base64decode(data));
+}
