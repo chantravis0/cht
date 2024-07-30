@@ -27,10 +27,21 @@ function load()
         resultmesg='obj_param to json failure!';
     }else
     {
-        resultmesg='obj_param to json successful!';
+        //resultmesg='obj_param to json successful!';
+        switch(obj_key)
+            {
+                case 'base64decode':
+                    resultmesg=base64ToDecode(obj_param);
+                    break;
+                default:
+                    break;
+            }
     }
     document.getElementById('resultMesg').innerText=resultmesg;
-    show();
+    if(resultmesg=='')
+    {
+        show();
+    }
 }
 function show()
 {
