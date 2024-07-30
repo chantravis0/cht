@@ -16,5 +16,5 @@ function getQueryParameter(name,url)
 
 function base64ToDecode(data)
 {
-	return unescape(base64decode(data));
+	return unescape(atob(data));
 }
