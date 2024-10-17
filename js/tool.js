@@ -1,5 +1,5 @@
 
-var swfUrl = "http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.swf";
+var swfUrl = "honehone_clock_tr.swf";
 
 var swfTitle = "honehoneclock";
 
