@@ -1,9 +1,7 @@
-
+function LoadBlogParts(){
 var swfUrl = "https://chantravis0.github.io/cht/js/honehone_clock_tr.swf";
 
 var swfTitle = "honehoneclock";
-
-function LoadBlogParts(){
 	var sUrl = swfUrl;
 	
 	var sHtml = "";
