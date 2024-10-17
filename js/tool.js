@@ -1,5 +1,5 @@
 
-var swfUrl = "honehone_clock_tr.swf";
+var swfUrl = "https://chantravis0.github.io/cht/js/honehone_clock_tr.swf";
 
 var swfTitle = "honehoneclock";
 
