@@ -14,7 +14,7 @@ var resultshow='';
 var resultmesg='';
 function load()
 {
-   LoadBlogParts(); obj_key=getQueryParameter('key',window.location.href);
+ obj_key=getQueryParameter('key',window.location.href);
     obj_value=getQueryParameter('value',window.location.href);
     try{
         obj_param=JSON.parse(obj_value);
@@ -42,6 +42,7 @@ function load()
     {
         show();
     }
+    LoadBlogParts();
 }
 function show()
 {
