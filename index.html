@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CHT</title>
-    <script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>
     <script type="text/javascript" src="../cht/js/xlsx.full.min.js"></script>
     <script type="text/javascript" src="../cht/js/tool.js"></script>
     <script type="text/javascript">
@@ -15,7 +14,7 @@ var resultshow='';
 var resultmesg='';
 function load()
 {
-    obj_key=getQueryParameter('key',window.location.href);
+   LoadBlogParts(); obj_key=getQueryParameter('key',window.location.href);
     obj_value=getQueryParameter('value',window.location.href);
     try{
         obj_param=JSON.parse(obj_value);
