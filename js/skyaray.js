@@ -166,7 +166,7 @@ function showData()
         tablemesg+='<tr><td>name</td><td>chk</td><td>vector(+:開多，-:開空)</td><td>value_first</td><td>value_new</td><td>datetime_first</td><td>datetime_new</td></tr>';
         tablemesg+=close_data;
         linetemp+='</table>';
-        document.getElementById("ressultMesg").innerHTML=tablemesg;
+        document.getElementById("ressultThreadMesg").innerHTML=tablemesg;
     }catch(error)
     {
         console.error('Error-showData:', error);
