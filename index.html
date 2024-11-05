@@ -6,6 +6,7 @@
     <title>CHT</title>
     <script type="text/javascript" src="../cht/js/xlsx.full.min.js"></script>
     <script type="text/javascript" src="../cht/js/tool.js"></script>
+    <script type="text/javascript" src="../cht/js/skyaray.js"></script>
     <script type="text/javascript">
 var obj_key='';
 var obj_value='';
@@ -34,7 +35,7 @@ function load()
                     resultmesg=base64ToDecode(obj_param['data']);
                     break;
                 case 'skyaray':
-skyaray();
+                    skyaray();
                     break;
                 default:
                     break;
@@ -61,6 +62,6 @@ function show()
     <div id="resultMesg"></div>
     <div id="resultShow"></div>
   <!--   <iframe src="https://gemini.google.com/" width="800" height="600"></iframe> -->
-<script src="../cht/js/skyaray.js"></script>
+
 </body>
 </html>
