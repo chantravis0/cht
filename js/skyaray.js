@@ -36,7 +36,7 @@ function getData()
 		{
 			try{
 				obj=JSON.parse(xmlhttp.responseText);
-    document.getElementById("ressultThreadMesg").innerHTML=xmlhttp.responseText;
+    document.getElementById("testShow").innerHTML=xmlhttp.responseText;
                 doing(obj)
 			}catch(error)
 			{
