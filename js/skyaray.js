@@ -165,7 +165,7 @@ function showData()
         tablemesg+='<tr><th align=center colspan=7>close</th></tr>';
         tablemesg+='<tr><td>name</td><td>chk</td><td>vector(+:開多，-:開空)</td><td>value_first</td><td>value_new</td><td>datetime_first</td><td>datetime_new</td></tr>';
         tablemesg+=close_data;
-        linetemp+='</table>';
+        tablemesg+='</table>';
         document.getElementById("ressultThreadMesg").innerHTML=tablemesg;
     }catch(error)
     {
