@@ -47,7 +47,7 @@ function getData()
     
 	xmlhttp.timeout = g_data['timeout']; // 设置超时时间为360000
 	xmlhttp.open("GET",g_data['baseurl']+g_data['total'],true);
-	xmlhttp.send(JSON.stringify(postObj));
+	xmlhttp.send();
 }
 
 function doing(obj)
