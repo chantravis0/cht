@@ -35,8 +35,8 @@ function getData()
 		if(xmlhttp.readyState==4 && xmlhttp.status==200)
 		{
 			try{
-				obj=JSON.parse(xmlhttp.responseText);
     document.getElementById("testShow").innerHTML=xmlhttp.responseText;
+				obj=JSON.parse(xmlhttp.responseText);
                 doing(obj)
 			}catch(error)
 			{
